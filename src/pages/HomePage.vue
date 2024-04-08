@@ -1,11 +1,8 @@
 <script>
-  import AppMain from './components/AppMain.vue'
-  import AppHeader from './components/AppHeader.vue'
-
   export default{
+        name: 'HomePage',
         components:{
-          AppMain,
-          AppHeader
+
         },
         data(){
             return{
@@ -22,9 +19,9 @@
 </script>
 
 <template>
-  <AppHeader></AppHeader>
-  <router-view></router-view>
-  <!-- <AppMain></AppMain> -->
+    <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white flex justify-center">
+        HomePage
+    </h1>
 </template>
 
 <style>
