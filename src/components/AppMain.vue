@@ -1,9 +1,13 @@
 <script>
 
     import  axios from 'axios';
+    import ProjectCard from './ProjectCard.vue';
 
     export default{
         name: "AppMain",
+        components:{
+            ProjectCard
+        },
         data(){
             return{
                 arrayProjects: [],
@@ -40,6 +44,7 @@
 
 <template>
     <main class="flex justify-center items-center ">
+        
         <div class="text-white w-3/5 mt-3">
             <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                 Ciao dal Portfolio Front End
@@ -52,19 +57,8 @@
                 </span>
                 :
             </h4>
-            <ul>
-                <li 
-                v-for="(element,index) in arrayProjects" :key="element.id"
-                class=" bg-white rounded-lg p-4 mb-4 text-black"
-                >
-                    <span class="text-bold text-2xl block py-2">
-                        {{ element.name }}
-                    </span>
-                    <span>{{ element.description }}</span>
-                </li>
-            </ul>
             
-            
+            <ProjectCard v-for="(element,index) in arrayProjects" :key="element.id" :project="element"></ProjectCard>
 
             <nav>
                 <ul class="flex items-center -space-x-px h-8 text-sm">
